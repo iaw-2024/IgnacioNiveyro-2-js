@@ -1,1 +1,39 @@
-DOM on Vercel!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div>
+        <form>
+            <div id="general">
+                <div id="nombre">  Nombre <input type="text" name="q" id="inputNombre"/> </div>
+                <br>
+                <div id="apellido"> Apellido <input type="text" name="q" id="inputApellido"/> </div>
+                <br>
+                <input type="button" value="Agregar/Editar Empleado" onClick="agregarNuevoEmpleado()"/>
+                <input type="button" value="Cargar Empleados" onclick="cargarEmpleados()" id="cargarEmpleadosBTN"/>
+            </div>
+        </form>
+    </div>
+    <div>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    
+</body>
+</html>
