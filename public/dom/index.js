@@ -2,7 +2,7 @@ var mapeoEmpleados = {};
 var indiceEmpleado = 1;
 
 function cargarEmpleados(){
-    fetch('../datos_estaticos.json')
+    fetch('/cliente_servidor/cargarEmpleados') 
     .then(response => {
         if (!response.ok) {
             throw new Error('Ocurrió un error al cargar los datos.');
