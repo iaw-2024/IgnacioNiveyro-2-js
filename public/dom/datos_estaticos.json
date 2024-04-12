@@ -1,0 +1,19 @@
+[
+    {
+      "nombre": "Homero",
+      "apellido": "Simpson"
+    },
+    {
+      "nombre": "Marge",
+      "apellido": "Bouvier"
+    },
+    {
+        "nombre": "Peter",
+        "apellido": "Parker"  
+    },
+    {
+      "nombre": "Stanley",
+      "apellido": "ElTermo"
+    }
+]
+  

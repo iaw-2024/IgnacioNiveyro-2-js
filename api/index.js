@@ -1,8 +1,30 @@
 const express = require("express");
 const app = express();
 
-app.get("/express", (req, res) => res.send("Express on Vercel!"));
-app.get("/cliente_servidor", (req, res) => res.send("Cliente Servidor on Vercel!"));
+
+const path = require('path');
+
+app.use('/', express.static(path.join(__dirname, '..', 'public')));
+
+const respuestaServidor = require("../src/express/respuestaServidor.js");
+app.get("/express", respuestaServidor);
+
+
+app.use('/cliente_servidor', express.static(path.join(__dirname, '..', 'src', 'cliente_servidor')));
+
+
+app.get("/cliente_servidor", (req, res) => {
+    
+});
+
+const datos = require('../src/datos_estaticos.json');
+
+
+app.get("/cliente_servidor/cargarEmpleados", (req, res) => {
+    // Carga los datos de los empleados
+    res.json(datos);
+});
+
 app.use(express.static('public'))
 
 
