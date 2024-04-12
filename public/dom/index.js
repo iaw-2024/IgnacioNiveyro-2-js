@@ -1,25 +1,25 @@
 var mapeoEmpleados = {};
 var indiceEmpleado = 1;
 
-function cargarEmpleados(){
-    fetch('/cliente_servidor/cargarEmpleados') 
-    .then(response => {
+function cargarEmpleados() {
+    // Realiza una solicitud fetch al archivo JSON
+    fetch('./datos_estaticos.json')
+      .then(response => {
+        // Verifica si la solicitud fue exitosa
         if (!response.ok) {
-            throw new Error('Ocurrió un error al cargar los datos.');
+          throw new Error('Error al cargar los datos');
         }
+        // Parsea la respuesta como JSON
         return response.json();
-    })
-    .then(data => {
-        // Aquí puedes acceder a los datos y hacer lo que necesites con ellos
-        console.log('Datos cargados:', data);
-        agregarEmpleadosTabla(data);
-        // Por ejemplo, podrías mostrar los datos en la consola o en la página HTML
-    })
-    .catch(error => {
+      })
+      .then(datos => {
+        // Llama a la función agregarEmpleadosTabla con los datos
+        agregarEmpleadosTabla(datos);
+      })
+      .catch(error => {
         console.error('Error:', error);
-        // Aquí puedes manejar errores, como mostrar un mensaje de error al usuario
-    });
-}
+      });
+  }
 
 function agregarEmpleadosTabla(jsonElement){
     var table = document.getElementById('table');
