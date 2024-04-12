@@ -3,7 +3,7 @@ var indiceEmpleado = 1;
 
 function cargarEmpleados() {
     // Realiza una solicitud fetch al archivo JSON
-    fetch('./datos_estaticos.json')
+    fetch('/dom/datos_estaticos.json')
       .then(response => {
         // Verifica si la solicitud fue exitosa
         if (!response.ok) {
